@@ -186,12 +186,14 @@ git clone https://github.com/andresmbd/prueba-desempeno-java.git
 
 ## visual interface
 
-[!imagen](assets/image.png)  
-[!imagen1](assets/image1.png)  
-[!imagen2](assets/image2.png)  
-[!imagen3](assets/image3.png)  
-[!imagen4](assets/image4.png)  
+![imagen](assets/image.png)  
+![imagen1](assets/image1.png)  
+![imagen2](assets/image2.png)  
+![imagen3](assets/image3.png)  
+![imagen4](assets/image4.png)  
 
+## Class diagram
+![classDiagram](assets/diagramaclases.png)  
 
 ## Coder Infomation
 - Name: Andres Barrios
