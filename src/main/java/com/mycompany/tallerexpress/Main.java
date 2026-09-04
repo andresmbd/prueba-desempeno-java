@@ -95,6 +95,22 @@ public class Main {
     private static void ejecutarRegistroPublico() {
         try {
             Usuario u = new Usuario();
+            
+            String[] opciones = {"RECEPCIONISTA", "ADMIN"};
+            Object rol = JOptionPane.showInputDialog(
+                null, 
+                "Seleccione un rol", 
+                "Registro de cuenta", 
+                JOptionPane.QUESTION_MESSAGE, 
+                null, 
+                opciones,
+                opciones[0]);
+            if (rol != null) {
+                String rolSeleccionado = rol.toString();
+                u.setRole(rolSeleccionado);
+            }
+            
+            
             String username = JOptionPane.showInputDialog(null, "Ingrese un Nombre de Usuario (Username):", "Registro de Cuenta", JOptionPane.QUESTION_MESSAGE);
             if (username == null || username.trim().isEmpty()) return;
             u.setUsername(username.trim());
@@ -121,10 +137,13 @@ public class Main {
     private static void mostrarMenuPrincipal() {
         String[] opciones = {"Gestión de Repuestos", "Gestión de Clientes", "Gestión de Vehículos", "Gestión de Órdenes", "Gestión de Usuarios", "Cerrar Sesión"};
         int seleccion = JOptionPane.showOptionDialog(null,
-                "Usuario actual: " + usuarioLogueado.getNombre() + " (" + usuarioLogueado.getRole() + ")\nSeleccione una opción:",
-                "TallerExpress - Menú Principal",
-                JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
-                null, opciones, opciones[0]);
+                                                    "Usuario actual: " + usuarioLogueado.getNombre() + " (" + usuarioLogueado.getRole() + ")\nSeleccione una opción:",
+                                                    "TallerExpress - Menú Principal",
+                                                    JOptionPane.DEFAULT_OPTION, 
+                                                    JOptionPane.PLAIN_MESSAGE,
+                                                    null, 
+                                                    opciones, 
+                                                    opciones[0]);
 
         switch (seleccion) {
             case 0 -> menuRepuestos();
