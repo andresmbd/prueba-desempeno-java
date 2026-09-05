@@ -29,9 +29,6 @@ public class UsuarioServiceDecorator implements UsuarioService {
     @Override
     public Usuario registrarUsuario(Usuario usuario) {
         // Propiedades por defecto antes de crear el usuario
-        if (usuario.getRole() == null || usuario.getRole().isBlank()) {
-            usuario.setRole("RECEPCIONISTA");
-        }
         if (usuario.getEstado() == null || usuario.getEstado().isBlank()) {
             usuario.setEstado("ACTIVO");
         }

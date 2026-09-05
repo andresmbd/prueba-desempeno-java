@@ -105,11 +105,10 @@ public class Main {
                 null, 
                 opciones,
                 opciones[0]);
-            if (rol != null) {
-                String rolSeleccionado = rol.toString();
-                u.setRole(rolSeleccionado);
-            }
-            
+ 
+            if (rol == null) return;
+            String rolSeleccionado = rol.toString();
+            u.setRole(rolSeleccionado);
             
             String username = JOptionPane.showInputDialog(null, "Ingrese un Nombre de Usuario (Username):", "Registro de Cuenta", JOptionPane.QUESTION_MESSAGE);
             if (username == null || username.trim().isEmpty()) return;
